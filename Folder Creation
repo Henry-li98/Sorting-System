@@ -1,0 +1,72 @@
+import os
+import sc2reader
+import shutil
+# MY GOALS --> CREATE BRACKET ARRAY THAT CAN HOLD PLAYER NAMES AND MAPS, HAVE IT CREATE THE BRACKET FOLDERS TO HOLD THE MAPS, check on the usage of python locks and create a check when looking at file duplication
+#Objectives
+#Query how many series will be played (will create an array determined by how many series there are)
+#Query Player Username and max number of matches will be played in this bracket (set it so that when it does not reach reach the max number of matches it returns null, therefore leaving only the games played)
+#Query where the file path is to look for replays ( Ask the user to specify the path for the replays, try and have it like when installing a game asking for where to save it)
+#Call replay files from both computers into a folder (have this part upload the replays that have two specific username, therefore reducing the risk of getting other replays that doesnt matter)
+#Remove duplicates of files from the folder holding both computer files
+#Upload to Cloud Network and have a copy appear on the screen
+#Get a GUI to ask for file path
+
+
+#os.scandir() returns an iterator of all objects in a directory including file attribute information
+#pathlib.Path.iterdir() returans an iterator of all the objects in a directory including file attribute information
+#   print ("input how many brackets in total will be played")
+#   list = map(int,input().split())
+#   print (list)
+
+#Query how many series will be played (will create an array determined by how many series there are)
+def get_int():
+    userdata = input("Please input the number of brackets there are: ")
+
+    if userdata == str:
+        return None
+    try:
+        userdata = int(input())
+        return userdata
+
+    except ValueError:
+        print ("A whole number is required")
+        return (get_int())
+
+
+def Player_Names():
+    #need to create a function that has it ask if there are any mistakes in the lise of players that they have asked for, and then have it access that number and change it
+    print ("What is the username of the First Player of each bracket? (please put a comma after each name) ")
+    print ("what is the username of the Second Player? of each bracket? (please put a comma after each name) ")
+    Player_name1 = [input()]
+    Player_name2 = [input()]
+#    print (str(Player_name1 + "vs" + Player_name2))
+    print (Player_name1)
+    print (Player_name2)
+
+User_input = get_int()
+Bracket = [User_input]
+for i in (range(0,User_input)):
+        Bracket.append((input()))
+        print ("Bracket(s): ", User_input)
+
+PlayerID = Player_Names()
+#def Folder_create():
+
+    #def Bracket_Num():
+
+
+
+#for x in range(0,User_input):
+#    path = "C:\\Users\\henry\\Desktop\\Tourny Test\\" + Player_name1 + "vs" + Player_name2
+#    os.mkdir(path)
+
+#path = os.getcwd()
+#print ("The current working directory is %s" % path)
+
+#Query where the file path is to look for replays // this might need a GUI to actually work
+#Query Player Username and max number of matches will be played in this bracket 
+
+#print("What is the maximum number of matches will there be in the best of #?")
+        #def Max_Matches():
+#Num_Matches = input()
+#print (Num_Matches)
